@@ -1,0 +1,14 @@
+Changelog
+
+Sito scuola Nastase Sello Cendron A.
+
+09/11/2015 -steve97
+
+14/11/2015 Cende
+
+15/11/2015 -steve97
+    Creato pagine "creazione_sondaggio.php" e "inserimento_sondaggio.php"; la prima contiene un form contenente
+    le informazioni riguardanti il sondaggio e rimanda alla seconda, che controlla che la data di scadenza sia 
+    in formato corretto e, se è così, inserisce le informazioni all'interno del database. Se l'inserimento ha
+    successo la pagina rimanda ad un'altra il cui compito sarà creare le domande e le risposte inerenti al sondaggio
+    appena creato. Se avete idee migliori per controllo data / creazione sondaggio fatevi avanti xD 

@@ -1,0 +1,60 @@
+<?php
+<?php
+
+
+$conn = mysql_connect("localhost", "root",""); 
+
+if (!$conn) {
+	exit();
+	//die ('Non riesco a connettermi: ' . mysql_error());
+}
+
+$db = mysql_select_db('Utenti', $conn);
+if (!$db) {
+	exit();
+	//die ("Errore nella selezione del database: " . mysql_error());
+}
+
+echo ("Connesso con successo<br><br>");
+
+
+// attività specifica sul database
+// lettura dei dati di una query
+// -------------------------------------------------------------------------------- //
+
+$nickname=$_POST["nickname"];
+$pw=$_POST["pw"];
+$nome=$_POST["nome"];
+$cognome=$_POST["cognome"];
+
+
+// preparo la query
+$query = "INSERT INTO `utenti`.`utente` (`nickname`, `pw`, `nome`, `cognome`)
+	
+VALUES (
+	'".$nickname."',
+	'".$pw."',
+	'".$nome."',
+	'".$cognome."'
+	);";
+
+$ris = mysql_query($query);
+
+echo ("<p>Registrato con successo</p><p>Sarai Reindirizzato al Login</p>
+	<script>
+	setTimeout(function() {
+	window.location.href = 'login.html';
+	}, 3000);
+	</script>");	
+			
+// attività specifica sul database
+
+
+
+mysql_close($conn);
+?>
+
+
+
+
+?>
